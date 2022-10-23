@@ -9,7 +9,7 @@ const dataHours = document.querySelector('[data-hours]');
 const dataMinutes = document.querySelector('[data-minutes]');
 const dataSeconds = document.querySelector('[data-seconds]');
 
-
+let intervalId = null;
 
 const options = {
     enableTime: true,
@@ -27,8 +27,9 @@ const options = {
     },
   };
   const flatpickrGet = flatpickr(input, options);
-  startBtn.addEventListener('click', onStart);
 
+  startBtn.addEventListener('click', onStart);
+  
   function onStart() {
     intervalId = setInterval(() => {
         const newDate = new Date();
