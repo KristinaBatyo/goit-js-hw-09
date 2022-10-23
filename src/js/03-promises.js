@@ -1,6 +1,6 @@
 import Notiflix from 'notiflix';
-const form = document.querySelector('.form');
 
+const form = document.querySelector('.form');
 
 const createPromise = (position, delay) => {
   return new Promise((resolve, reject) => {
@@ -11,7 +11,6 @@ const createPromise = (position, delay) => {
       reject(`❌ Rejected promise ${position} in ${delay}ms`);
     }
   });
-  
 };
 
 const onFormSub = el => {
@@ -26,7 +25,6 @@ const onFormSub = el => {
         .catch(message => Notiflix.Notify.failure(message));
     }, +delay + i * +step);
   }
-  e.currentTarget.reset();
 };
 
 form.addEventListener('submit', onFormSub);
